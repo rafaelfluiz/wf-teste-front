@@ -1,0 +1,23 @@
+<div class="container mt-3">
+  <h2>Lista de Usuários</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each @users as |user|}}
+        <tr>
+          <td>{{user.nome}}</td>
+          <td>{{user.email}}</td>
+          <td>
+            <button type="button" class="btn btn-danger" {{on "click" (fn @onDelete this.user)}}>Delete</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
